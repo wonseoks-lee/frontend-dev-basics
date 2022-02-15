@@ -17,6 +17,7 @@
 
  + HTML(Data 표현) + CSS(decoration)
 
+---
 
 # JS, DOM 실행과정
 
@@ -190,7 +191,7 @@ p{
 
 # 외부 CSS link / import
 
-### link
+## link
 
 ```html
 <link rel="stylesheet" type="text/css" href="css/main.css"/>
@@ -212,7 +213,7 @@ body{
 
 font-family 는 해당하는 글꼴이 없을 경우, 하나씩 하나씩 적용된다 → 여러 OS를 위한 옵션
 
-### import
+## import
 
 ```css
 @charset "UTF-8";
@@ -288,7 +289,7 @@ this 를 넣어주고 java script 로 dom 객체를 불러와서 해당 객체�
 
 객체클릭을 풀었을 때 dom 객체를 불러오고 해당 객체의 배경화면 색상을 흰색으로 바꾼다 (onBlur)
 
-### 종속 선택자(Class를 사용한 동적 프로그래밍)
+## 종속 선택자(Class를 사용한 동적 프로그래밍)
 
 ```html
 <style>
@@ -378,7 +379,7 @@ function changeBackground(el, className){
 
 input의 user-id를 id로 가지는 .focuesd class 만 적용한다
 
-### 하위 선택자
+## 하위 선택자
 
 ```html
 .list1 a {
@@ -411,7 +412,7 @@ input의 user-id를 id로 가지는 .focuesd class 만 적용한다
 
 score가 같으면 아래것을 사용한다
 
-### 그룹 선택자
+## 그룹 선택자
 
 ```html
 .right_box, .left_box {
