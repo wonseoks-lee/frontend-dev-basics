@@ -7,9 +7,6 @@
 
  + RDB
 
----  
-
-  
   
 # FE Dev
 
@@ -20,7 +17,6 @@
 
  + HTML(Data 표현) + CSS(decoration)
 
----
 
 # JS, DOM 실행과정
 
@@ -28,7 +24,6 @@
 
 ![js환경](https://user-images.githubusercontent.com/66767038/153982353-2091af6f-8468-46ac-a5e5-dae93540a343.png)
 
----
 
 # HTML
 
@@ -42,7 +37,6 @@ CSS는 decoration 기능
 
 HTML + CSS =  구조
 
----
 
 # 상대경로
 
@@ -66,7 +60,6 @@ HTML + CSS =  구조
 
 현재의/상위폴더의/images의/lightblue.jpg 불러오기
 
----
 
 # 절대경로
 
@@ -76,7 +69,6 @@ HTML + CSS =  구조
 
 절대경로는 /부터 시작한다
 
----
 
 # 시맨틱 검색
 
@@ -138,7 +130,6 @@ block level = div로 나누고 inline level = span 으로 나눈다
 
 ![HTML (1)](https://user-images.githubusercontent.com/66767038/153982360-14eabc11-bf48-464f-bb38-5e615d2b207d.png)
 
----
 
 # ****CSS ( Cascading Style Sheet )****
 
@@ -198,7 +189,6 @@ p{
 
 위 코드는 headline과 p 태그를 같이 쓸경우, headline만 적용된다.
 
----
 
 # 외부 CSS link / import
 
