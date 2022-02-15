@@ -235,4 +235,201 @@ import는 상대경로를 사용한다
 
 # JavaScript
 
+## 사용법
+
+```html
+<script type="text/javascript">
+function f() {
+	console.log(this);
+}
+
+</script>
+<input onfocus="console.log(this);" type="text" placeholder="아이디"/>
+```
+
 <script> 태그는 JS Engine이 실행하고 나머지 태그들은 DOM에 트리형태로 생성된다
+
+함수에서의 this는 그 함수를 호출한 객체를 뜻한다
+
+```html
+<!-- 콘솔화면 -->
+<input onfocus="console.log(this);" type="text" placeholder="아이디">
+```
+
+콘솔창에 뜨는 모습이다. 이처럼 this는 해당 함수를 호출한 객체를 뜻한다.
+
+“” ‘’ 구분 안한다
+
+## DOM Programming
+
+```html
+<!-- DOM programming -->
+<script type="text/javascript">
+function onFocus(el) {
+	el.style.backgroundColor = "#e1e6f6";
+}
+function onBlur(el) {
+	el.style.backgroundColor = "#fff";
+}
+
+</script>
+</head>
+<body>
+	<form>
+		<input onfocus="onFocus(this)" onblur="onBlur(this)" id="user-id" type="text" placeholder="아이디"/>
+		<br/><br/>
+		<input type="password" placeholder="비밀번호"/>
+	</form>
+</body>
+</html>
+```
+
+this 를 넣어주고 java script 로 dom 객체를 불러와서 해당 객체의 배경화면 색상을 바꾼다. (onFocus)
+
+객체클릭을 풀었을 때 dom 객체를 불러오고 해당 객체의 배경화면 색상을 흰색으로 바꾼다 (onBlur)
+
+### 종속 선택자(Class를 사용한 동적 프로그래밍)
+
+```html
+<style>
+input{
+	background-color: #fff;
+	padding: 5px;
+	border: 2px solid #03cf5d;
+	outline: none;
+}
+
+input.focused{
+	background-color: #e1e6f6;
+}
+</style>
+<script type="text/javascript">
+function onFocus(el) {
+	// el.style.backgroundColor = "#e1e6f6";
+	el.className = "focused"
+}
+function onBlur(el) {
+	//el.style.backgroundColor = "#fff";
+	el.className = "";
+}
+</script>
+</head>
+<body>
+	<form>
+		<input 
+			onfocus="onFocus(this)" 
+			onblur="onBlur(this)" 
+			id="user-id" 
+			type="text"
+			class="focused" 
+			placeholder="아이디"/>
+		<br/><br/>
+		<input type="password" placeholder="비밀번호"/>
+	</form>
+</body>
+```
+
+input객체 매개변수로 받는다 → input(el)의 className에 style.input에 선언해둔 ‘focused’를 대입
+
+```html
+<style>
+input{
+	background-color: #fff;
+	padding: 5px;
+	border: 2px solid #03cf5d;
+	outline: none;
+}
+
+input.focused{
+	background-color: #e1e6f6;
+}
+input#user-id.focused{
+	background-color: #e1e6f6;
+}
+</style>
+<script type="text/javascript">
+function changeBackground(el, className){
+	el.className = className;
+}
+</script>
+</head>
+<body>
+	<form>
+		<input 
+			onfocus='changeBackground(this, "focused")' 
+			onblur='changeBackground(this, "")' 
+			id="user-id" 
+			type="text"
+			class="focused" 
+			placeholder="아이디"/>
+		<br/><br/>
+		<input 
+			onfocus='changeBackground(this, "focused")' 
+			onblur='changeBackground(this, "")'
+			type="password"
+			class="focused" 
+			placeholder="비밀번호"/>
+		<br/><br/>
+	</form>
+</body>
+```
+
+두개의 함수를 하나의 함수로 깔끔하게 바꾼 버전
+
+input의 user-id를 id로 가지는 .focuesd class 만 적용한다
+
+### 하위 선택자
+
+```html
+.list1 a {
+	font-weight: bold;
+	color: #f00;
+	text-decoration: line-through;
+}
+
+.list2 a {
+	font-weight: bold;
+	color: #39f;
+	text-decoration: none;
+}
+
+<ul class="list1">
+		<li><a href="#">제주글꼴의 가장 큰 특징</a></li>
+		<li>제주어를 표현할 수 있어야 한다.</li>
+		<ul class="list2">
+			<li><a href="#">제주 사투리(고어)를 표현할 수 있어야 한다.</a></li>
+			<li>제주 글꼴이라는 느낌이 줘야 한다.</li>
+			<li>기본 고딕체가 있어야 한다.</li>
+			<li>기본 명조체가 있어야 한다.</li>
+		</ul>
+		<li>시대적인 요구에 맞춘 디자인이어야 한다.</li>
+		<li>PC와 맥 둘 다 사용 가능해야 한다.</li>
+	</ul>
+```
+
+![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37ee646d-8175-4ee2-bca9-479a03f2dff3/Untitled.png)
+
+score가 같으면 아래것을 사용한다
+
+### 그룹 선택자
+
+```html
+.right_box, .left_box {
+	margin: 0;
+	padding: 5px;
+	width: 47%;
+	border: 5px solid #ddd;
+}
+
+.right_box {
+	float: right;
+}
+
+.left_box {
+	float: left;
+}
+```
+
+각각의 선택자들을 그룹으로 지어 속성을 부여
+
+공통적인 속성 일괄적용으로 편리하게 사용
