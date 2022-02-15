@@ -11,19 +11,11 @@ input{
 	outline: none;
 }
 
-input.focused{
+input#user-id.focused{
 	background-color: #e1e6f6;
 }
 </style>
 <script type="text/javascript">
-function onFocus(el) {
-	// el.style.backgroundColor = "#e1e6f6";
-	el.className = "focused"
-}
-function onBlur(el) {
-	//el.style.backgroundColor = "#fff";
-	el.className = "";
-}
 function changeBackground(el, className){
 	el.className = className;
 }
@@ -42,7 +34,6 @@ function changeBackground(el, className){
 		<input 
 			onfocus='changeBackground(this, "focused")' 
 			onblur='changeBackground(this, "")' 
-			id="user-id" 
 			type="password"
 			class="focused" 
 			placeholder="비밀번호"/>
