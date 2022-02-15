@@ -270,6 +270,66 @@ function f() {
 
 “” ‘’ 구분 안한다
 
+```jsx
+f = function(){
+	console.log("time out");
+}
+
+finction f() {
+	console.log("time out");
+}
+```
+
+두 함수 선언방식 모두 같으나 f라는 객체를 만드는 것을 선호하도록 하자 (1번코드)
+
+```jsx
+console.log("1");
+setTimeout(f, 2000);
+console.log("2");
+```
+
+```jsx
+console.log("1");
+setTimeout(function(){
+	console.log("time out");
+}, 2000);
+console.log("2");
+```
+
+함수가 객체이기 때문에 함수자체를 인자로 주는 것이 가능하다
+
+위 코드의 결과는 1, 2, time out 순으로나온다 → 자바스크립트는 1 다음 timeout이 나오지 않는 것을 보아 비동기 방식을 채택중이라는 것을 알 수 있다.
+
+## ****setInterval****, setTimeOut, clearInterval
+
+```jsx
+window.onload = function(){
+	var elDiv = document.getElementById("box");
+	elDiv.onclick = function() {
+		var intervalId = setInterval(function(){
+			var marginTop = parseInt(elDiv.style.marginTop);
+			
+			if( marginTop < -80){
+				clearInterval(intervalId);
+				return
+			}
+			
+			marginTop = marginTop - 10;
+			elDiv.style.marginTop = marginTop + "px";
+			
+			console.log(marginTop);
+			
+		}, 200);
+	}
+}
+```
+
+setInterval은 일정 간격마다 반복적으로 수행한다
+
+setTimeout은 설정해둔 시간을 기다리고 1번 수행한다
+
+clearInterval은 setInterval을 정지한다
+
 ## DOM Programming
 
 ```html
@@ -297,6 +357,8 @@ function onBlur(el) {
 this 를 넣어주고 java script 로 dom 객체를 불러와서 해당 객체의 배경화면 색상을 바꾼다. (onFocus)
 
 객체클릭을 풀었을 때 dom 객체를 불러오고 해당 객체의 배경화면 색상을 흰색으로 바꾼다 (onBlur)
+
+---
 
 ## 종속 선택자(Class를 사용한 동적 프로그래밍)
 
