@@ -158,7 +158,9 @@ class → .class (100 score)
 
 id → #id (10000 score)
 
+```css
 <h1 id=”header” class=”title”> ... </h1>
+```
 
 h1
 
