@@ -24,13 +24,13 @@
 
 ---
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/12d9ade4-4e11-4c2d-b386-bc4e2e362f11/Untitled.png)
+![js환경](https://user-images.githubusercontent.com/66767038/153982353-2091af6f-8468-46ac-a5e5-dae93540a343.png)
 
 ---
 
 # HTML
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/16106373-03ac-43bc-a631-12c8325d74c6/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/66767038/153982514-1c735951-bd02-4f27-87c2-01466b28ebe2.png)
 
 javascript 는 동적인 것을 만들 수 있다.
 
@@ -134,7 +134,7 @@ block level = div로 나누고 inline level = span 으로 나눈다
 
 보통 3layer 쓴다 → header, container, footer
 
-![HTML (1).png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/7a28aaf1-b89f-4c56-b706-1c8d9935c7ba/HTML_(1).png)
+![HTML (1)](https://user-images.githubusercontent.com/66767038/153982360-14eabc11-bf48-464f-bb38-5e615d2b207d.png)
 
 ---
 
