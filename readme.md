@@ -1,3 +1,12 @@
+# 유용한 사이트
+
+Layout :  [https://www.html.it/app/uploads/blog/layoutgala/](https://www.html.it/app/uploads/blog/layoutgala/)
+
+HTML validator : [https://validator.w3.org/](https://validator.w3.org/)
+
+DOCTYPE 추천 : [http://www.w3.org/QA/2002/04/valid-dtd-list.html](https://www.w3.org/QA/2002/04/valid-dtd-list.html)
+
+---
 # BE Dev
 
 1. Java 문법, 언어적 특징
