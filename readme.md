@@ -20,7 +20,6 @@
 
 # JS, DOM 실행과정
 
----
 
 ![js환경](https://user-images.githubusercontent.com/66767038/153982353-2091af6f-8468-46ac-a5e5-dae93540a343.png)
 
@@ -96,7 +95,6 @@ public class Person{
 	</pre>**
 ```
 
----
 
 # HTML Tag (Element)
 
