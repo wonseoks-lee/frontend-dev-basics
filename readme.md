@@ -443,3 +443,29 @@ score가 같으면 아래것을 사용한다
 각각의 선택자들을 그룹으로 지어 속성을 부여
 
 공통적인 속성 일괄적용으로 편리하게 사용
+
+## margin, padding
+
+<img width="859" alt="스크린샷 2022-02-15 오후 3 54 02" src="https://user-images.githubusercontent.com/66767038/154011629-34b222e6-e720-49d3-bf08-747ac6624bfe.png">
+
+```html
+.box1 {
+	border: 1px solid #666;
+	width: 300px;
+	background-color: #FFC;
+	
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	
+	padding: 10px 20px 30px 40px; /* T R B L */
+	padding: 10px 20px 30px; /* T (R, L) B 좌우대칭*/  
+	padding: 10px 20px; /* (T, B) (R, L)  */
+	padding: 10px; /* (T, R, B, L) */  
+	
+	margin: 100px auto 300px auto;
+	margin: 100px auto 300px;
+	margin: 100px auto;
+}
+```
