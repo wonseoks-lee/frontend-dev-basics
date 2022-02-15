@@ -407,7 +407,7 @@ input의 user-id를 id로 가지는 .focuesd class 만 적용한다
 	</ul>
 ```
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/37ee646d-8175-4ee2-bca9-479a03f2dff3/Untitled.png)
+![하위선택자](https://user-images.githubusercontent.com/66767038/154002455-162fae9b-19e0-4e2b-ab0e-a21a8c14faa3.png)
 
 score가 같으면 아래것을 사용한다
 
