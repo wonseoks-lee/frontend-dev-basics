@@ -8,14 +8,14 @@
 body {font-family:  "맑은 고딕", 돋움;	font-size: 0.75em;	color: #333;}
 
 .header{
-	width: 630px;
+	width: 842px;
 	height: 100px;
 	margin:  50px auto;
-	background-color: #aaa;
 }
 
 .header .logo, .header .search-box{
 	float: left;
+	margin: 16px 0;
 }
 
 .header .logo{
@@ -23,22 +23,72 @@ body {font-family:  "맑은 고딕", 돋움;	font-size: 0.75em;	color: #333;}
 	width: 222px;
 	height: 52px;
 	background: #fff url("/ch03/images/nsplite.png") no-repeat 0 -158px / 457px 434px; 
-}
+	cursor: pointer; 
+	margin-right: 30px;
+}	
 
 .search-box{
-	width: 400px;
+	width: 586px;
 	height: 52px;
-	
-	background-color: #ccc;
+	border: 2px solid #19ce60;
+	border-radius: 2px;
+	line-height: 40px;
 }
 
+.search-box input {
+	width: 444px;
+	height: 24px;
+	padding: 13px;
+	margin: 1px;
+	border: none;
+	outline: 0;
+}
+
+/* search-box에 있는 btn-search라는 search_icon이 들어갈 배경 설정*/
+.search-box .btn-search {
+	background-color: #19ce60; 
+	width: 54px;
+	height: 54px;
+	cursor: pointer; 
+}
+
+ /* 검색버튼 아이콘 */ 
+.search-box .btn-search button{
+	font-size: 0px;
+	width: 22px;
+	height: 22px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px 0px / 457px 434px;
+	border: none;
+	cursor: pointer; 
+	margin: 16px;
+}
+
+.search-box #keyboard {
+	font-size: 0px;
+	width: 20px;
+	height: 12px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px -381px / 457px 434px;
+	margin: 20px 5px 20px 10px;
+}
+
+.search-box #dropdown {
+	font-size: 0px;
+	width: 10px;
+	height: 5px;
+	background: url("/ch03/images/nsplite.png") no-repeat -408px -77px / 457px 434px;
+	margin: 23px 10px 23px 5px;
+}
+
+
+/* input a 태그를 block 단위로 나열 한후(세로), float right를 주어 오른쪽정렬을 해준다(가로) */
 .search-box input, .search-box a{
 	display: block; 
 }
-
+/* 각각의 요소들을 오른쪽정렬한다는 것, header의 logo나 search-box 처럼 큰 범위들은 float: left를 주어 왼쪽 정렬 */
 .search-box input, .search-box .btn-search, .search-box a {
 	float: right;
 }
+
 
 </style>
 </head>
@@ -46,12 +96,12 @@ body {font-family:  "맑은 고딕", 돋움;	font-size: 0.75em;	color: #333;}
 	<div class="header">
 		<h1 class="logo">네이버</h1>
 		<div class="search-box">
-			<input type='text'/>
-			<a href="#" id="keyboard">키보드</a>
-			<a href="#" id="dropdown">드롭다운</a>
 			<div class="btn-search">
 				<button>돋보기</button>
 			</div>
+			<a href="#" id="dropdown">드롭다운</a>
+			<a href="#" id="keyboard">키보드</a>
+			<input type='text'/>
 		</div>
 	</div>
 </body>
