@@ -485,7 +485,7 @@ score가 같으면 아래것을 사용한다
 
 ## 그룹 선택자
 
-```html
+```css
 .right_box, .left_box {
 	margin: 0;
 	padding: 5px;
@@ -505,6 +505,106 @@ score가 같으면 아래것을 사용한다
 각각의 선택자들을 그룹으로 지어 속성을 부여
 
 공통적인 속성 일괄적용으로 편리하게 사용
+
+## 수도선택자
+
+```css
+a:link, a:visited, a:active {
+	color: #F60;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #06F;
+	text-decoration: underline;
+}
+
+h1:before {
+	content: url(images/bul1.gif);
+}
+
+h1:after {
+	content: url(images/bul2.gif);
+}
+
+tr:hover {
+	background-color: #FC6;
+	cursor: pointer;
+}
+```
+
+:hover   -> 마우스의 커서가 올라가 있는 상태
+:active  -> 마우스 커서를 클릭한 순간부터 놀기 직전까지 상태
+:link     -> 링크를 클릭하지 않은 그냥 링크만 되어 있는 상태
+:visited -> 링크를 눌러서 방문한 후 상태
+:before -> 문장이 시작되기 전
+:after   -> 문장이 끝난 다음
+- :hover, :active, :link, :visited 는 a 태그와 함께 링크를 데코레이션 할 때 많이 사용된다
+
+```html
+<p>
+		원래는 2010년 5월 4일 공개된 글꼴이지만, <a href="#map">다시 여러분에게 안내해</a> 드리겠습니다. 첫번째로
+		제가 생각한 내용은 대한민국에서 가장 유명한 관광지인 <a href="#">제주를 상징할만한 요소</a>는 많지만 디자인적으로
+		통일된 무언가가 있어야 하겠다. 두번째로 <a href="#">공항부터 시작해서 관광객들이</a> 접하는 모든 곳에서 일관된
+		디자인의 통일성과 상징성이 필요하다.
+</p>
+
+	<ul>
+		<li>안녕하세요</li>
+					....
+		<li>안녕하세요</li>
+	</ul>
+	<h4 id="map">
+		오시는 길
+	</h4>
+```
+
+id를 href에 넣어두면 클릭 했을 시, 해당 객체로 바로 이동된다
+
+# 선택자 활용 예제(ch03/nhead.html)
+
+```css
+.search-box .btn-search {
+	background-color: #19ce60; 
+	width: 54px;
+	height: 54px;
+	cursor: pointer; 
+}
+```
+
+search-box에 있는 btn-search라는 search_icon이 들어갈 배경 설정
+
+```css
+.search-box .btn-search button{
+	font-size: 0px;
+	width: 22px;
+	height: 22px;
+	background: url("/ch03/images/nsplite.png") no-repeat -420px 0px / 457px 434px;
+	border: none;
+	cursor: pointer; 
+	margin: 16px;
+}
+```
+
+검색버튼 아이콘
+
+```css
+.search-box input, .search-box a{
+	display: block; 
+}
+```
+
+ input a 태그를 block 단위로 나열 한후(세로), float right를 주어 오른쪽정렬을 해준다(가로)
+
+```css
+.search-box input, .search-box .btn-search, .search-box a {
+	float: right;
+}
+```
+
+각각의 요소들을 오른쪽정렬한다는 것, header의 logo나 search-box 처럼 큰 범위들은 float: left를 주어 왼쪽 정렬
+
+---
 
 ## margin, padding
 
@@ -534,7 +634,7 @@ score가 같으면 아래것을 사용한다
 
 ## max-width, max-height
 
-```
+```css
 .box1 {
 	margin:10px;
 	padding:10px;
@@ -547,7 +647,7 @@ score가 같으면 아래것을 사용한다
 
 max-width 설정 시, 화면을 아무리 늘려도 width가 최대 900px까지만 늘려진다
 
-```
+```css
 .box1 {
 	margin:10px;
 	padding:10px;
@@ -574,7 +674,7 @@ hidden : 내용이 잘림. 스크롤바를 숨김
 
 ## border
 
-```
+```css
 .box1 {
 	border: 4px dashed;
 
@@ -638,7 +738,7 @@ hidden : 내용이 잘림. 스크롤바를 숨김
 
 오른쪽 마우스를 눌렀을 때, 이미지 저장이 안뜬다면 background image로 구현한 객체다
 
-```
+```css
 body {
 	margin:0;
 	padding:0;
@@ -657,3 +757,160 @@ body {
 repeat 는 사진을 어떤방향으로 반복할지를 정한다
 
 x y 속성 갖고있고 사진의 크기에 따라 여러개를 반복적으로 찍어낸다
+
+```css
+ul.bullet{
+	list-style-type: none;
+	width: 300px;
+	margin: 100px auto;
+	
+	border: 1px solid #999;
+	border-radius: 10px;
+	
+	background: url("/ch03/images/back2.gif") no-repeat 0 0;
+}
+
+ul.bullet li {
+	padding: 10px 10px 10px 25px;
+	background: url("/ch03/images/bullet1.gif") no-repeat 5px 10px;
+}
+</style>
+</head>
+
+<body>
+<ul  class="bullet">
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+    <li>리스트의 bullet 을 백그라운드로 사용가능합니다.</li>
+</ul>
+</body>
+```
+
+list 는 기본적으로 bullet을 갖고있는데 none으로 설정해줌으로서 없앨 수 있고
+
+background를 사용하여 커스텀하여 사용할 수 있다.
+
+## z-index
+
+```css
+.box{
+	position: absolute;
+	width: 200px;
+	height: 100px;
+	color: #fff;
+}
+
+.box#box_1{
+	left: 250px;
+	top: 100px;
+	background-color: #00f;		
+	z-index: 10;
+}
+
+.box#box_2{
+	left: 200px;
+	top: 150px;
+	background-color: #f00;
+	z-index: 5;
+}
+```
+
+z축이 생기게하려면  position을 absolute를 줘야한다
+
+z-index의 값에 따라 맨앞으로 보낼 객체를 선택한다
+
+위 값은 box2가 맨 앞으로 온다
+
+## float
+
+문서에 사진과 그림이 있을 때, 그림을 왼쪽이나 오른쪽으로 띄워서 정렬하거나 각 객체를 오른쪽이나 왼쪽으로 정렬하여 전체문서를 배치할 때 사용
+
+---
+
+# 텍스트 처리방법
+
+## 글꼴
+
+우리나라는 맑은고딕 12px 을 보통 사용한다
+
+1px = 72dpi 이다. 보통 인쇄할 때는 300 dpi
+모든 브라우저의 기본 글꼴의 크기는 16px 를 기준으로 한다.
+따라서 1em = 16px
+
+12px = 0.75em
+
+```css
+p.text1 {
+	font-family: "맑은 고딕";
+	font-size: 12px;
+}
+p.text2 {
+	font-family: "맑은 고딕";
+	font-size: 0.75em;
+	color:#FF6633;
+}
+```
+
+em으로 설정해둔 text2는 글꼴 크기를 ‘아주크게'로 설정해두면 같이 커진다
+
+1em = 16px → 아주크게 → 1em = 32px 
+
+그러나, text1은 px로 고정해두었기때문에 설정을 ‘아주크게'로 바꾸어도 아무것도 변경되지 않는다
+
+‘중간’ → 16px
+
+접근성과 관련이 있기떄문에 em을 쓰도록하자
+
+## line-height
+
+```css
+p.text1 {
+	font-family: "맑은 고딕";
+	font-size: 24px;
+	line-height:28px;
+}
+p.text2 {
+	font-family: "맑은 고딕";
+	font-size: 1.75em;
+	color:#FF6633;
+	line-height:1.2em;
+}
+
+p.text3 {
+	font-family: "맑은 고딕";
+	font-size: 0.75em;
+	color:#3366FF;
+	line-height:14px;
+	text-align:
+}
+```
+
+문장과 문장 사이의 간격
+
+‘아주 크게’로 변경 시에 p.text3는 깨진다. 그러나 em들은 안깨지고 잘나온다
+
+em을 쓰자
+
+## elipsis
+
+```css
+.text3{
+	height: 20px;
+	border: 1px solid #999;
+	
+	
+	width: 70px;	/* 텍스트를 가지고 있는 엘리먼트의 너비 */ 
+	overflow: hidden; /* 글자 길이가 너비를 넘어가는 경우 보이지 않게 처리 */ 
+	text-overflow: ellipsis; /* 글자 길이가 너비를 넘어가는 경우 ... */
+	white-space: nowrap /* 줄바꿈 금지 -> 한줄로 처리 */
+}
+
+<p class="text3" title="영문자는 abc로 시작됩니다.">영문자는 abc 로 시작됩니다.</p>
+```
+
+마우스를 올려뒀을때 title에 적힌 문자열이 보임
+
+elipsis를 통해 한정된 공간에 한줄로 표시한다 ( overflow시, ... 으로 표현 )
