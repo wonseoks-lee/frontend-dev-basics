@@ -257,7 +257,7 @@ function f() {
 <input onfocus="console.log(this);" type="text" placeholder="아이디"/>
 ```
 
-<script> 태그는 JS Engine이 실행하고 나머지 태그들은 DOM에 트리형태로 생성된다
+script 태그는 JS Engine이 실행하고 나머지 태그들은 DOM에 트리형태로 생성된다
 
 함수에서의 this는 그 함수를 호출한 객체를 뜻한다
 
@@ -531,3 +531,129 @@ score가 같으면 아래것을 사용한다
 	margin: 100px auto;
 }
 ```
+
+## max-width, max-height
+
+```
+.box1 {
+	margin:10px;
+	padding:10px;
+	border:1px solid #666;
+	background-color: #FFC;
+	
+	max-width: 900px;
+}
+```
+
+max-width 설정 시, 화면을 아무리 늘려도 width가 최대 900px까지만 늘려진다
+
+```
+.box1 {
+	margin:10px;
+	padding:10px;
+	border:1px solid #666;
+	background-color: #FFC;
+	
+	
+	max-height: 100px;
+	overflow-y: scroll;
+	overflow-y: auto;
+	overflow-y: hidden;
+}
+```
+
+max-height 설정 시, 위와 동일하나 글이 짤릴 수 있다. 박스를 넘어서 글씨 나옴
+
+이를 overflow-y를 설정하여 해결한다
+
+scroll : 내용이 잘림. scroll bar 나옴
+
+auto : 내용이 잘림. 필요할때만 스크롤바 나옴
+
+hidden : 내용이 잘림. 스크롤바를 숨김
+
+## border
+
+```
+.box1 {
+	border: 4px dashed;
+
+}
+.box2 {
+	border:4px dotted;
+
+}
+.box3 {
+	border:4px double;
+
+}
+.box4 {
+	border:4px groove;
+
+}
+.box5 {
+	border:4px  inset;
+
+}
+.box6 {
+	border:4px outset;
+
+}
+
+.box7 {
+	border: 4px ridge;
+
+}
+
+.box8 {
+	border: 4px solid;
+	
+	/* 12[3(속성)x4(방향)]가지 속성, 방향, 컬러 스타일링을 할 수 있다(예제: 그중에 3가지) */
+	border-left-width: 1px;
+	border-left-style: solid;
+	border-left-color: green;
+	
+	/* 12가지 속성별 단축형 */
+	border-width: 1px 2px 3px 4px; /* T R B L */
+	border-width: 1px 2px 3px;  /* T (R, L) B 좌우대칭*/ 
+	border-width: 1px 2px; /* (T, B) (R, L)  */
+	border-width: 10px; /* (T, R, B, L) */  
+	
+	border-style: dash dotted solid double;
+	border-color: red green blue black;
+	
+	/* 보통은 다음과 같은 방식을 사용한다.(4방향이 모두 width, color, style이 동일하다면...) */
+	border: 1px solid #111;
+	
+}
+.box9 {
+	border: 4px none;
+
+}
+```
+
+박스의 선을 긋는 속성, 몇개를 적느냐에 따라 동일한 속성부여 가능
+
+## background
+
+오른쪽 마우스를 눌렀을 때, 이미지 저장이 안뜬다면 background image로 구현한 객체다
+
+```
+body {
+	margin:0;
+	padding:0;
+	
+	/*
+	background-color: #022250;
+	background-image: url("/ch03/images/back_image2.jpg"); 
+	background-repeat: no-repeat; 
+	background-position: 0 0;
+	background-size: 500px;
+	*/
+	background: #022250 url("/ch03/images/back_image2.jpg") no-repeat 0 0 / 900px; 
+}
+```
+
+repeat 는 사진을 어떤방향으로 반복할지를 정한다
+
+x y 속성 갖고있고 사진의 크기에 따라 여러개를 반복적으로 찍어낸다
