@@ -151,21 +151,7 @@ RDB
 
 Web Service(Linux[on premise, Cloud], Tomcat, apache, nginx, kafka, rabbitMQ, Redis, Elastic Search) git 
 
-# 선택자(Selector)
 
-tag → tag Name (1 score)
-
-class → .class (100 score)
-
-id → #id (10000 score)
-
-```html
-<h1 id=”header” class=”title”> ... </h1>
-```
-
-h1
-
-.title
 
 #header
 
@@ -359,6 +345,22 @@ this 를 넣어주고 java script 로 dom 객체를 불러와서 해당 객체�
 객체클릭을 풀었을 때 dom 객체를 불러오고 해당 객체의 배경화면 색상을 흰색으로 바꾼다 (onBlur)
 
 ---
+
+# 선택자(Selector)
+
+tag → tag Name (1 score)
+
+class → .class (100 score)
+
+id → #id (10000 score)
+
+```html
+<h1 id=”header” class=”title”> ... </h1>
+```
+
+h1
+
+.title
 
 ## 종속 선택자(Class를 사용한 동적 프로그래밍)
 
@@ -561,7 +563,7 @@ tr:hover {
 
 id를 href에 넣어두면 클릭 했을 시, 해당 객체로 바로 이동된다
 
-# 선택자 활용 예제(ch03/nhead.html)
+## 선택자 활용 예제(ch03/nhead.html)
 
 ```css
 .search-box .btn-search {
