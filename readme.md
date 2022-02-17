@@ -916,3 +916,62 @@ em을 쓰자
 마우스를 올려뒀을때 title에 적힌 문자열이 보임
 
 elipsis를 통해 한정된 공간에 한줄로 표시한다 ( overflow시, ... 으로 표현 )
+
+## Table
+
+```html
+<table>
+	<tr>
+	      <th>형식</th>
+				<th>선택자이름</th>
+  </tr>
+	<tr>
+	      <td>a</td>
+	      <td>html</td>
+  </tr>
+	<tr>
+	      <td>.classname</td>
+	      <td>클래스</td>
+  </tr>
+</table>
+```
+
+tr하나당 한줄
+
+td하나당 새로 한줄
+
+th는 헤더부분(제목부분)
+
+| 형식 | 선택자이름 |
+| --- | --- |
+| a | html |
+| .classname | 클래스 |
+
+```css
+.tbl-ex tr:hover td{ background-color: #fc6; cursor:pointer; }
+```
+
+td,tr에 마우스를 올려놨을때 색상이 변경된다
+
+## list
+
+```css
+ul	{ list-style-type: decimal }
+ol	{ list-style-type: square }
+```
+
+ordered list나 unordered list 나 디자인적으로 차이가 없다
+
+ol임에도 불구하고 순서가 없는 square가 사용가능하고, ul인데도 순서가 있는 decimal이 사용가능기때문
+
+보통은 ul을 선호한다
+
+## type css
+
+```css
+input[type="submit"] { display: block; margin: 10px auto; width: 100px; }
+
+<input type="submit" value="가입">
+```
+
+type이 submit인 input 태그의 css불러오느 방법
