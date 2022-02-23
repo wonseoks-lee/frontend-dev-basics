@@ -35,3 +35,10 @@ console.log(str8);
 
 var str8 = str7.substring(10, 13/*last index -1*/);
 console.log(str8);
+
+var a = str7.split(" ");
+console.log(a);
+
+var str11 = "abcdef";
+var a = str11.split(":");
+console.log(a);
