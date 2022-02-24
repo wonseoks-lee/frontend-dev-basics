@@ -6,6 +6,15 @@
 <script>
 $(function(){
 	setTimeout(function(){	
+		$(".red strong")
+			.css('color', 'red')
+			.css('font-weight', 'normal');
+		
+		// js라서 font-weight를 못쓴다 -> fontWeight
+		$(".blue strong").css({
+			color: 'blue',
+			fontWeight: 'normal'
+		});
 	}, 1000);
 });
 </script>

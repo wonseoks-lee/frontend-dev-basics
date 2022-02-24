@@ -6,6 +6,10 @@
 <script>
 $(function(){
 	setTimeout(function(){
+		$("li[id]").css('color', 'red');
+		// class를 갖고있고 그 값이 second인 애
+		$("li[class='second']").css('color', 'blue');
+		$("li[class!='second']").css('font-weight', 'bold');
 	}, 1000);
 });
 </script>
