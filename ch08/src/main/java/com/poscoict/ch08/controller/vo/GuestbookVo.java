@@ -36,6 +36,11 @@ public class GuestbookVo {
 	public void setMessage(String message) {
 		this.message = message;
 	}
+	@Override
+	public String toString() {
+		return "GuestbookVo [no=" + no + ", name=" + name + ", password=" + password + ", reg_date=" + reg_date
+				+ ", message=" + message + "]";
+	}
 	
 	
 }
