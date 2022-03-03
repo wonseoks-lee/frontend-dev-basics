@@ -3,15 +3,17 @@
  */
 
 
-PI: 3.14,
+exports.PI = 3.14;
+
 exports.sum = function(){
     var sum = 0;
     Array.from(arguments).forEach(function(e){
         sum+=e;
     });
 
-    return sum;
-}
+    return sum; 
+};
+
 exports.max = function(){
     var max = Number.MIN_SAFE_INTEGER;
     Array.from(arguments).forEach(function(e){
@@ -19,7 +21,8 @@ exports.max = function(){
     });
 
     return max;
-}
+};
+
 exports.min = function(){
     var min = Number.MAX_SAFE_INTEGER;
     Array.from(arguments).forEach(function(e){
@@ -27,4 +30,4 @@ exports.min = function(){
     });
 
     return min;
-}
+};
