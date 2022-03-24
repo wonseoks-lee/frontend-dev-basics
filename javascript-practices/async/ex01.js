@@ -1,4 +1,4 @@
-const ex01 =  function(param, callback) {
+const fetch =  function(param, callback) {
     //
     //  비동기 코드: 파일 시스템 접근, 네트워크통신, SQL to DB, setTimeout
     //
@@ -16,7 +16,7 @@ const ex01 =  function(param, callback) {
 
 //  callback은 무조건 앞자리를 error로 주고 사용해라 -> 아래형식으로 사용해라
 //  test01 : success
-ex01('param-data', function(error, res) {
+fetch('param-data', function(error, res) {
     if(error) {
         console.error(error);
     } else {
@@ -25,7 +25,7 @@ ex01('param-data', function(error, res) {
 });
 
 //  test01 : fail
-ex01('param-error', function(error, res) {
+fetch('param-error', function(error, res) {
     if(error) {
         console.error(error);
     } else {
